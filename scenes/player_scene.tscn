@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cmve1v52xh4n2"]
+
+[ext_resource type="Texture2D" uid="uid://dc63m30iidfx4" path="res://resources/dungeon/frames/elf_m_idle_anim_f0.png" id="1_c3371"]
+[ext_resource type="Script" uid="uid://c4cu75j84br4y" path="res://scenes/player_scene.gd" id="1_dgtyx"]
+[ext_resource type="Texture2D" uid="uid://ds46l8kssocbb" path="res://resources/dungeon/frames/elf_m_idle_anim_f1.png" id="2_dgtyx"]
+[ext_resource type="Texture2D" uid="uid://dc6k1t3hqlaau" path="res://resources/dungeon/frames/elf_m_idle_anim_f2.png" id="3_6w563"]
+[ext_resource type="Texture2D" uid="uid://dx8pkbx0ig3k0" path="res://resources/dungeon/frames/elf_m_idle_anim_f3.png" id="4_ta1uf"]
+[ext_resource type="Texture2D" uid="uid://do3svbnf2pdkr" path="res://resources/dungeon/frames/elf_m_run_anim_f0.png" id="5_61utv"]
+[ext_resource type="Texture2D" uid="uid://b0kc1r5lfkvn3" path="res://resources/dungeon/frames/elf_m_run_anim_f1.png" id="6_i0mqh"]
+[ext_resource type="Texture2D" uid="uid://cg31y2jbftqe7" path="res://resources/dungeon/frames/elf_m_run_anim_f2.png" id="7_5m66l"]
+[ext_resource type="Texture2D" uid="uid://bdf6awsnmwnkn" path="res://resources/dungeon/frames/elf_m_run_anim_f3.png" id="8_r7na4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ei6gw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c3371")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dgtyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6w563")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ta1uf")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_61utv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i0mqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5m66l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r7na4")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="PlayerScene" type="Node2D" unique_id=1876802150]
+script = ExtResource("1_dgtyx")
+
+[node name="animated_sprite" type="AnimatedSprite2D" parent="." unique_id=372318545]
+sprite_frames = SubResource("SpriteFrames_ei6gw")
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.41998586
