@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://blfplcwh3juiy"]
+
+[ext_resource type="Texture2D" uid="uid://ku8v0hoppvsx" path="res://resources/dungeon/frames/imp_idle_anim_f0.png" id="1_i1qee"]
+[ext_resource type="Texture2D" uid="uid://b4ulbhwyhxgil" path="res://resources/dungeon/frames/imp_idle_anim_f1.png" id="2_5k1qk"]
+[ext_resource type="Texture2D" uid="uid://djxqhi6ix0m5r" path="res://resources/dungeon/frames/imp_idle_anim_f2.png" id="3_kkttb"]
+[ext_resource type="Texture2D" uid="uid://dnvlctwmmyyjn" path="res://resources/dungeon/frames/imp_idle_anim_f3.png" id="4_t6cyg"]
+[ext_resource type="Texture2D" uid="uid://druadp30i0v16" path="res://resources/dungeon/frames/imp_run_anim_f0.png" id="5_1pnpy"]
+[ext_resource type="Texture2D" uid="uid://dstytlxasd1kq" path="res://resources/dungeon/frames/imp_run_anim_f1.png" id="6_0887g"]
+[ext_resource type="Texture2D" uid="uid://cg41lgm5kgmo5" path="res://resources/dungeon/frames/imp_run_anim_f2.png" id="7_wcagx"]
+[ext_resource type="Texture2D" uid="uid://cpfewonokv16j" path="res://resources/dungeon/frames/imp_run_anim_f3.png" id="8_mfo0u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ei6gw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i1qee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5k1qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kkttb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t6cyg")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1pnpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0887g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wcagx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mfo0u")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=142541050]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=384196866]
+sprite_frames = SubResource("SpriteFrames_ei6gw")
+animation = &"run"

@@ -13,6 +13,7 @@ config_version=5
 config/name="GodotRPG"
 run/main_scene="uid://cq2fkrmiifidi"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+run/max_fps=50
 config/icon="res://icon.svg"
 
 [display]

@@ -10,3 +10,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	#self.position += 50 * delta * Vector2(1, -1).normalized();
+
+func attack() -> void:
+	$AnimationPlayer.play("attack")

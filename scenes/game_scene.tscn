@@ -6,10 +6,10 @@
 
 [node name="Node2D" type="Node2D" unique_id=1592727575]
 
-[node name="PlayerScene" parent="." unique_id=320425755 instance=ExtResource("3_bw6k5")]
-position = Vector2(-8, 8)
-
 [node name="MapScene" parent="." unique_id=350763179 instance=ExtResource("2_onqr8")]
 
 [node name="InputHandler" type="Node" parent="." unique_id=1037684049]
 script = ExtResource("3_ycayy")
+
+[node name="PlayerScene" parent="." unique_id=1876802150 instance=ExtResource("3_bw6k5")]
+position = Vector2(-8, 8)
