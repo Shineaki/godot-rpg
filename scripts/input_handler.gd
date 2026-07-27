@@ -1,40 +1,42 @@
 extends Node
 
+const TILE_SIZE = 16
 var direction = Vector2(0, 0)
 var player_node: Node2D = null
-var movement_tween: Tween = null
 var finished_movement = true
+var player_position = Vector2i(-1, -1)
+var imp_position = Vector2i(2, -1)
+var target_position = Vector2i(0, 0)
 
 func _ready() -> void:
 	player_node = $"../PlayerScene"
 
-func process_user_input():
-	pass
-
-func finished_movement_fn():
-	finished_movement = true
-	movement_tween.kill()
-
 func move_player(dir: Vector2):
 	finished_movement = false
 	player_node.run(dir)
-	movement_tween = create_tween()
-	movement_tween.tween_property(player_node, "position", player_node.position + dir, 0.2)
-	movement_tween.tween_callback(self.finished_movement_fn)
+	target_position = player_node.position + dir
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	if !finished_movement:
+		player_node.position = player_node.position.move_toward(target_position, round(100 * delta))
+		if player_node.position == target_position:
+			finished_movement = true
 	if finished_movement:
-		direction = Vector2.ZERO
+		direction = Vector2i.ZERO
 		if Input.is_action_pressed("ui_right"):
-			direction = Vector2(16, 0)
-			#$"../PlayerScene".attack()
+			direction = Vector2i(1, 0)
 		if Input.is_action_pressed("ui_left"):
-			direction = Vector2(-16, 0)
+			direction = Vector2i(-1, 0)
 		if Input.is_action_pressed("ui_down"):
-			direction = Vector2(0, 16)
+			direction = Vector2i(0, 1)
 		if Input.is_action_pressed("ui_up"):
-			direction = Vector2(0, -16)
-		if direction != Vector2.ZERO:
-			move_player(direction)
+			direction = Vector2i(0, -1)
+		if direction != Vector2i.ZERO:
+			if player_position + direction == imp_position:
+				player_node.attack(direction)
+			else:
+				move_player(direction * TILE_SIZE)
+				player_position += direction
 		else:
 			player_node.idle()
+		

@@ -74,9 +74,62 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeaponSlot_L:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, -5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WeaponSlot_L:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6w563"]
+resource_name = "attack_l"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponSlot_L:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-7, -5), Vector2(-2.5, -14), Vector2(-12, 3), Vector2(-7, -5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeaponSlot_L:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.9599310885968813, -2.2689280275926285, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_61utv"]
-resource_name = "attack"
+resource_name = "attack_r"
 length = 0.4
 step = 0.1
 tracks/0/type = "value"
@@ -101,13 +154,14 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, -0.9267698328089894, 2.2689280275926285, 0.0]
+"values": [0.0, -0.9599310885968813, 2.2689280275926285, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i0mqh"]
 _data = {
 &"RESET": SubResource("Animation_ta1uf"),
-&"attack": SubResource("Animation_61utv")
+&"attack_l": SubResource("Animation_6w563"),
+&"attack_r": SubResource("Animation_61utv")
 }
 
 [node name="PlayerScene" type="Node2D" unique_id=1876802150]
@@ -126,6 +180,13 @@ autoplay = "idle"
 position = Vector2(7, -5)
 
 [node name="WeaponKnife" type="Sprite2D" parent="WeaponSlot_R" unique_id=1330862509]
+texture = ExtResource("10_6w563")
+
+[node name="WeaponSlot_L" type="Node2D" parent="." unique_id=122086558]
+visible = false
+position = Vector2(-7, -5)
+
+[node name="WeaponKnife" type="Sprite2D" parent="WeaponSlot_L" unique_id=1321178845]
 texture = ExtResource("10_6w563")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=782830485]
