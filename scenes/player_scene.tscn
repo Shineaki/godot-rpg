@@ -117,10 +117,8 @@ script = ExtResource("1_dgtyx")
 z_index = 2
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_ei6gw")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.41998586
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=842519847]
 
