@@ -19,8 +19,8 @@ func flip_if_needed(dir: Vector2):
 		$animated_sprite.flip_h = true
 	elif dir.x > 0:
 		$animated_sprite.flip_h = false
-	$WeaponSlot_R.visible = !$animated_sprite.flip_h
-	$WeaponSlot_L.visible = $animated_sprite.flip_h
+	$Weapons/WeaponSlot_R.visible = !$animated_sprite.flip_h
+	$Weapons/WeaponSlot_L.visible = $animated_sprite.flip_h
 
 func run(dir: Vector2) -> void:
 	$animated_sprite.play("run")

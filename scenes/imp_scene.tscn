@@ -46,7 +46,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=384196866]
+[node name="Node2D" type="Node2D" unique_id=1374131875]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=384196866]
+position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_ei6gw")
 animation = &"idle"
 autoplay = "idle"
+offset = Vector2(0, -4)
